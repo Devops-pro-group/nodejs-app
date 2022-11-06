@@ -1,0 +1,14 @@
+## Build the images and tag
+
+docker build -t bricelab21/nodejs-fe .
+
+docker tag  bricelab21/nodejs-fe:latest  bricelab21/nodejs-fe:1
+
+## push the app to dockerhub
+docker push  bricelab21/nodejs-fe:1
+
+### Deploy the application
+docker run -d  --name nodeapp -p 9000:9981 bricelab21/nodejs-fe
+
+
+
